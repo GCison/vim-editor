@@ -3,6 +3,8 @@
 ## Para extrairmos o máximo de eficicência no ambiente de desenvolvimento com o Editor vim, é necessário explorarmos as inumeras alternativas de configurações e melhorias, disponíveis para o editor mais poderoso de linha de comando.
 <br>
 
+! [Logo da Eagle Tecnologia](./img/logo_principal.png)
+
 Nesse treinamento, vamos aprender juntos a como realizar as configurações necessárias para customizar o seu .vimrc.
 
 Veja os principais tópicos abordados:
