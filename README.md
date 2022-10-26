@@ -1,9 +1,10 @@
 # Vimrc Guia de configuração para Termux - Customize o editor vim com Mapemaneto de comandos, temas, plugins, autocomplete e muito mais.
 
 ## Para extrairmos o máximo de eficicência no ambiente de desenvolvimento com o Editor vim, é necessário explorarmos as inumeras alternativas de configurações e melhorias, disponíveis para o editor mais poderoso de linha de comando.
-<br>
 
 Nesse treinamento, vamos aprender juntos a como realizar as configurações necessárias para customizar o seu .vimrc.
+
+<kbd>{c:yellow}Essa é uma frase com fundo escuro e texto amarelo{/c}</kbd>
 
 Veja os principais tópicos abordados:
 
