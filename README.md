@@ -21,7 +21,7 @@ No termux, existem três possibilidades de tipos de instalação do vim, que sã
  - vim-gtk
  - vim-python
 
-!!!!! Primeiramente antes de iniciar os procedimentos de configuração, cetifique-se de que o vim já esteja instalado. Para isso, utilize o seguinte comando:
+!!!! Primeiramente antes de iniciar os procedimentos de configuração, cetifique-se de que o vim já esteja instalado. Para isso, utilize o seguinte comando:
 
     vim --version
 
