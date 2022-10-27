@@ -1,10 +1,24 @@
-# Vimrc Guia de configuração para Termux - Customize o editor vim com Mapemaneto de comandos, temas, plugins, autocomplete e muito mais.
+# Um guia completo do Editor Vim/.vimrc para alta performance, usabilidade, configuração e customização no ambiente Termux. 
 
-## Para extrairmos o máximo de eficicência no ambiente de desenvolvimento com o Editor vim, é necessário explorarmos as inumeras alternativas de configurações e melhorias, disponíveis para o editor mais poderoso de linha de comando.
+## Para extrairmos o máximo de eficicência no ambiente de desenvolvimento com o editor vim, é necessário conhecermos os fundamentos da ferramenta e explorarmos as inumeras alternativas de configurações e melhorias possíveis, disponíveis para o editor.
+
+### Nesse artigo vamos explorar o vim e todo o seu pontencial, visando o ambiente de senvolvimento no TERMUX.
+
+
+### Principais tópicos:
+
+ - Introdução
+ - História
+ - De onde vim e para onde vou?
+ - O que você precisa saber antes de começar
+ - Como funciona o vim
+ - Comandos e edição de arquivos com o vim
+   - Modos de configuração
+   - Criando arquivos
+   - Abrindo arquivos
+   - 
 
 Nesse treinamento, vamos aprender juntos a como realizar as configurações necessárias para customizar o seu .vimrc.
-
-<kbd>{c:yellow}Essa é uma frase com fundo escuro e texto amarelo{/c}</kbd>
 
 Veja os principais tópicos abordados:
 
@@ -22,7 +36,7 @@ No termux, existem três possibilidades de tipos de instalação do vim, que sã
  - vim-gtk
  - vim-python
 
-!!!! Primeiramente antes de iniciar os procedimentos de configuração, cetifique-se de que o vim já esteja instalado. Para isso, utilize o seguinte comando:
+Primeiramente antes de iniciar os procedimentos de configuração, cetifique-se de que o vim já esteja instalado. Para isso, utilize o seguinte comando:
 
     vim --version
 
@@ -54,6 +68,7 @@ Abaixo, segue a arquitetura básica dos diretórios para configuração
         ├── autoload/
         ├── backup/
         ├── colors/
+        ├── settings/
         └── plugged/
 
 ### Criando arquitetura de diretórios
@@ -68,10 +83,44 @@ Em seguida, crie as demais pastas:
     mkdir ~/.vim/colors
     mkdir ~/.vim/plugged
 
+___
+
+## Arquivo .vimrc
+
+Nesse ponto, vamos iniciar as configurações do arquivo principal
+
 ### Criando o arquivo principal de configuração .vimrc
 Agora, vamos criar o arquivo base .vimrc, na raiz do termux "home"
 
         :> .vimrc
+
+### Organizador Vimrc
+Uma coisa que em particular, eu me preocupo, é a forma como programas são criados. E por mais simples que seja, quando eu iniciei as configurações do arquivo <code>.vimrc</code> seguindo alguns exemplos. Algo começou a me incomodar; que foi a grande quantidade de código, contida em um único arquivo. Pois, a medida que novas funcionalidades eram adicionadas, o código começava a mostrar cinais de que a longo prazo, iria ficar difícil de gerenciar.
+
+Então, eu já imaginava a solução "ideal" para tal estrututura, e felizmente eu encontrei duas formas de poder solucionar essa questão, que são elas:
+
+ - Trabalhar com dobramento de código
+ - Dividir o .vimrc em vários arquivos, específicos por cada configuração
+
+Utilizei ambas, porém, a segunda é a que eu mais gostei, porque ela segue uma estrutura limpa, e me fez lembrar do SOLID onde cada arquivo tem uma única reponsabilidade.
+
+Para o nosso exemplo, eu irei trabalhar com as duas formas, mas eu recomendo fortemente que você crie o hábito de tentar aplicar a segunda opção _Dividir o .vimrc em vários arquivos, específicos por cada configuração_
+
+No final do nosso curso, nos teremos a seguinte estrutura de arquivos:
+
+ - Plugins de terceiros ().~/.vim/settings/plugins.vim
+ - Configurações gerais ().~/.vim/settings/configs.vim
+ - Funções personalizadas ().~/.vim/settings/functions.vim
+ - Mapeamentos-chave () .~/.vim/settings/mappings.vim
+
+### Criando os arquivos de configurações
+
+Vamos criar os arquivos de configurações, na pasta *settings* que já foi criada nas etapas anteriores. O comando <code>:> file </code> tem a mesma funcionalidade que o comando <code>touch file</code>.
+
+    :> ~/.vim/settings/plugins.vim
+    :> ~/.vim/settings/configs.vim
+    :> ~/.vim/settings/functions.vim
+    :> ~/.vim/settings/mappings.vim
 
 ## Configurações básicas do Vim
 <br>
@@ -79,25 +128,45 @@ Iremos realizar as configurações básicas no arquivo <code>.vimrc</code>. Caso
 
 <br>
 
-Para facilitar o organização do nosso, iremos contruir blocos de instruções de acordo com cada grupo. E o primeiro, será responsável pelas configurações básicas:
+Para facilitar a organização das nossas configurações, podemos trabalhar de duas formas:
+
+ - 
 
 No arquivo de configuração <code>.vimrc </code> crie a seguinte instrução:
 
     " CONFIGURAÇÕES BÁSICAS --------------------------------------------------------- {{{
-    " Configurações aqui...
+
+    " }}}
+
+
+    " PLUGINS ----------------------------------------------------------------------- {{{
+
+    " }}}
+
+
+    " MAPPINGS ---------------------------------------------------------------------- {{{
+
+    " }}}
+
+
+    " VIMSCRIPT --------------------------------------------------------------------- {{{
+
+    " }}}
+
+
+    " STATUS LINE ------------------------------------------------------------------- {{{
 
     " }}}
 
 <br>
 
-Feito isso, vamos colocar as primeiras configurações. Todas possuem comentários com uma breve descrição sobre suas funcionalidades
+Feito isso, iniciar aplicando as configurações básicas, conforme exemplo abaixo. Lembrando que cada instrução, está com um comentário resumido, a respeito de suas funcionalidades.
 
 <br>
 
 
 
     " CONFIGURAÇÕES BÁSICAS --------------------------------------------------------- {{{
-    " Configurações aqui...
 
     " habiliti o destaque de sintaxe
     syntax on
@@ -164,7 +233,30 @@ Feito isso, vamos colocar as primeiras configurações. Todas possuem comentári
 
     " }}}
 
+---
 
+### Configurações avançadas
+Após a realização desses proce
+
+
+--- 
+
+## Comandos básicos do Vim
+
+### Buffers
+
+O que é umtampão?
+
+Um buffer é um espaço na memória onde você pode escrever e editar algum texto. Quando você abre um arquivo em Vim, os dados são vinculados a um buffer. Quando você abre 3 arquivos em Vim, você tem 3 buffers.
+
+Saindo do Vim
+    
+    q
+
+    "sai e fecha todos os outros buffers
+    qall 
+
+--- 
 ## NERDTree
 <br>
 O NERDTree é um explorador de sistema de arquivos para o editor vim. Usando este plugin, os usuários podem navegar visualmente por hierarquias complexas de diretório, abrir rapidamente arquivos para leitura ou edição e executar operações básicas do sistema de arquivos.
@@ -175,3 +267,79 @@ Exemplo | Valor
 --------| --------:
 Carro   | R$ 45.304,22
 Casa    | R$ 109.435,09
+
+## Sessões no vim
+Se uma exibição salvar as configurações de uma janela, uma sessão salvará as informações de todas as janelas (incluindo o layout).
+
+criamos uma pasta com três arquivos de exemplo:
+
+Cria split das telas
+
+    :split file?
+    :vsplit
+
+Abrir um arquivo em uma determinada janela
+
+    :open file.txt
+
+Salvar uma sessão
+
+    "salva no diretório atual
+    :mksession
+
+    " salva em um diretório especifíco
+    :mksession path
+
+    " sobrescreve um arquivo de sessão
+    :mksession! file
+
+Carregar um sessão
+
+    " comanso do vim
+    :source session.vim
+
+    " pelo terminal
+    vim -S session.vim
+
+## Tabs (guias)
+
+Cria uma nova guis/tab
+
+    Para abrir em uma nova guia:file2.js
+    :tabnew file2.js
+
+    :tabnew file.txt    Open file.txt in a new tab
+    :tabclose           Close the current tab
+    :tabnext            Go to next tab
+    :tabprevious        Go to previous tab
+    :tablast            Go to last tab
+    :tabfirst           Go to first tab
+
+Para iniciar vim com várias guias, você pode fazer isso a partir do terminal:
+
+    vim -p file1.js file2.js file3.js
+
+desabilita as teclas direcionais do vim
+
+hjkl
+
+Tecla   | FUnção
+--------| --------:
+h       | Move para a direita
+j       | Move para baixo
+k       | Move para cima
+l       | Move para a direita
+
+
+
+    noremap <Up> <NOP>
+    noremap <Down> <NOP>
+    noremap <Left> <NOP>
+    noremap <Right> <NOP>
+https://github.com/neoclide/coc.vim/wiki/Language-servers
+### Language Servers
+
+
+### Instalar servidores para linguagens
+
+    CocInstall coc-css coc-html  coc-jsondd
